@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="/Portfolio/CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <p class="Head">
+                <b>
+                    <a href="index.html">Home</a> |
+                    <a href="projects.html">Projects</a> |
+                    <a href="experiences.html">Experiences</a> |
+                    <a href="aboutme.html">About Me</a> |
+                    <a href="contactme.html">Contact Me</a>
+                </b>
+            </p>
+        </nav>
+    </header>
+
+    <main class="contact-me">
+        <h1>Request a Call</h1>
+        <p>Give us some info so that I can get back to you</p>
+        
+        <form action="action.js" class="styled-form">
+            <div class="input-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" placeholder="Enter your first name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" placeholder="Enter your last name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone No.</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="state">Select State</label>
+                <select name="State" id="state">
+                    <option value="CState">Select State</option>
+                    <option value="WB">West Bengal</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Reason for Call Request</h2>
+        <textarea name="feedback" id="reason" placeholder="Enter your reason..."></textarea>
+    </main>
+
+    <footer>
+        <h5>Contact Me</h5>
+        <p>
+            Phone: +91 83350 40450<br>
+            Email: <a href="mailto:paul.soumyajit06@gmail.com">paul.soumyajit06@gmail.com</a><br>
+            Mail Box: Kolkata: 700157
+        </p>
+    </footer>
+</body>
+</html>
