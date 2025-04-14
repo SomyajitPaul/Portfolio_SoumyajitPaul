@@ -1,0 +1,1253 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --favicon-color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --favicon-color: black;
+    }
+}
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-weight: 600;
+    letter-spacing: 1px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Typography */
+.text-center {
+    text-align: center;
+}
+
+/* Layout & Containers */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    scroll-snap-align: start;
+    min-height: 100vh; /* Ensure sections are at least full viewport height */
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navigation */
+.nav-links {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #0A0A0A;
+    padding: 0.8rem 1.5rem;
+    border-radius: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    font-size: 1rem;
+    list-style: none;
+    font-family: 'Roboto Condensed';
+}
+
+.nav-links a {
+    padding: 0.5rem 0.9rem;
+    border-radius: 500px;
+    text-decoration: none;
+    color: #CCCCCC;
+    transition: 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #0A0A0A;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.115) 1.3px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.115) 1.3px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* Online Status */
+.online {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    outline: 4px solid #ff000033;
+    border-radius: 500px;
+    background-color: #ff2828;
+    margin-right: 0.75rem;
+}
+
+/* Title Styling */
+.title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    position: relative;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.title span:not(.white-text) {
+    background: linear-gradient(45deg, #0b75f9, #f30686);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.title span:not(.white-text)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(243, 6, 134, 0.8) 0%,
+        rgba(11, 117, 249, 0.5) 40%,
+        rgba(11, 117, 249, 0) 70%
+    );
+    filter: blur(30px);
+    z-index: -1;
+}
+
+.white-text {
+    color: white;
+    -webkit-text-fill-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Introduction Text */
+.intro {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+/* Typewriter Effect */
+.typewriter-container {
+    font-family: 'Roboto Condensed', sans-serif;
+    opacity: 0.5;
+    font-size: 1.75rem;
+    font-weight: 500;
+    min-height: 2.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+.typewriter {
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Hero Buttons Section */
+.hero-btns-sec {
+    font-family: 'Roboto Condensed';
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-btn {
+    font-family: "Roboto Condensed";
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.25rem;
+    padding-left: 1.25rem;
+    border-radius: 500px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #CCCCCC;
+    background-color: #0A0A0A;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    color: #0A0A0A;
+    background-color: #FFFFFF;
+}
+
+.hero-btn i {
+    font-size: 1.25rem;
+    padding: 0.625rem;
+    color: #0A0A0A;
+    background-color: #FFFFFF;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Drawer & Overlay */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+}
+
+.drawer {
+    position: fixed;
+    bottom: -500px;
+    width: 96%;
+    max-width: 512px;
+    height: auto;
+    background: #0A0A0A;
+    transition: transform 0.3s ease;
+    padding: 1.375rem;
+    text-align: center;
+    border-radius: 1.75rem;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.drawer.open {
+    transform: translateY(0) !important;
+}
+
+.drawer-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drag-handle {
+    width: 96px;
+    height: 16px;
+    background: #4D4D4D;
+    border-radius: 500px;
+    margin: 0rem auto 1.5rem auto;
+    cursor: grab;
+}
+
+/* Drawer Content */
+.drawer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0rem;
+}
+
+.drawer-icon {
+    text-decoration: none;
+}
+
+.drawer-icon img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.drawer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #202020;
+    color: #CCCCCC;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 0.75rem auto;
+    width: 100%;
+    text-decoration: none;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+}
+
+.drawer-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.drawer p {
+    font-size: 0.875rem;
+    margin: 1.5rem 0rem 1rem 0rem;
+}
+
+/* Contact Form */
+.input-field {
+    width: 100%;
+    padding: 0.625rem;
+    margin: 0.375rem 0rem;
+    background: #202020;
+    color: #CCCCCC;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    resize: none;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #FFFFFF;
+    color: #0A0A0A;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #202020;
+    color: #FFFFFF;
+}
+
+.result {
+    font-size: 0.75rem;
+}
+
+/* Email Display */
+.email {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#email-text {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.email .copy-btn {
+    font-size: 1.25rem;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 3.75rem;
+    font-family: "Oswald";
+
+}
+
+.sec-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-title span {
+    font-size: 9rem;
+    font-weight: 700;
+    background: linear-gradient(270deg, #FFFFFF25 0%, #ffffff0b 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-emphasis-color: transparent;
+}
+
+.sec-title h2 {
+    font-size: 6.25rem;
+    font-weight: 700;
+    position: absolute;
+    color: #FFFFFF;
+}
+
+.main-title p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-family: "Roboto Condensed";
+    opacity: 0.7;
+}
+
+.about {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.about-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 5rem;
+}
+
+.about-content h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #007BFF, #FF0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.about-links {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-icon {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.about-icon img {
+    width: 22px;
+    height: 22px;
+}
+
+.about-icon::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #202020;
+    color: #CCCCCC;
+    padding: 0.375rem 0.625rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 500px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.about-icon:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-0.375rem);
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 500px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add/modify these CSS rules */
+#about {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#about .container {
+    width: 80%;
+    max-width: 1200px;
+}
+
+.about-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Add this CSS rule to make the about-links icons white */
+.about-icon img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1); /* This turns the icons white */
+}
+
+.projects {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Add container for consistent width */
+.projects .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Update project container to use grid layout for 3x2 pattern */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+/* Make cards responsive */
+@media (max-width: 1200px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ensure project cards are consistent */
+.project-card {
+    background: #202020;
+    border-radius: 1.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: #FFFFFF;
+}
+
+.project-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    flex-grow: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    background: #1A1A1A;
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    gap: 0.5rem;
+    background: #1A1A1A;
+    color: #CCCCCC;
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative; /* Establish positioning context */
+    line-height: 1; /* Reset line height */
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+}
+
+/* Reset any inherited styles that might affect alignment */
+.btn * {
+    line-height: 1;
+}
+
+.btn img {
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    filter: brightness(0) invert(0.7);
+    display: block; /* Ensure block display */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+.btn:hover img {
+    filter: brightness(0);
+}
+
+/* Fix for Safari and some other browsers */
+.btn span, .btn a {
+    display: flex;
+    align-items: center;
+}
+
+/* If the buttons have text content without a wrapping element */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.skills {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.tech-stacks {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 0.75rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    color: #D9D9D9;
+    background: #202020;
+    padding: 0.625rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+}
+
+.tech-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+/* Add this CSS to your stylesheet */
+.skills .main-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    color: #D9D9D9;
+    background: #202020;
+    padding: 0.625rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-item.active {
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Add this to create the 5-4-5 pattern */
+.tech-stacks .tech-item:nth-child(5) ~ .tech-item:nth-child(5n+6):not(:nth-child(10)) ~ .tech-item:nth-child(4n+10):not(:nth-child(14)) ~ .tech-item:nth-child(14) ~ .tech-item {
+    grid-column: auto;
+}
+
+/* Specific adjustments for each row */
+.tech-stacks .tech-item:nth-child(n+6):nth-child(-n+9) {
+    grid-column-end: span 1;
+}
+
+/* Force the 6th through 9th items to be in the second row */
+.tech-stacks .tech-item:nth-child(6) {
+    grid-column-start: 2;
+}
+
+.tech-stacks {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.tech-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Animation for the bubble effect that pushes other icons */
+.tech-item {
+    transition: transform 0.3s ease, z-index 0s;
+}
+
+.tech-item:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    position: relative;
+}
+
+.education {
+    position: relative;
+    z-index: 1;
+    background-color: black; /* Same as body to ensure it blends in */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+  }
+
+.education-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 768px;
+    gap: 11rem;
+    padding: 1rem;
+}
+
+.education-container {
+    opacity: 0; /* Start invisible for animation */
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    z-index: 5; /* Ensure it's above any other elements */
+  }
+.education-container i {
+    font-size: 1.5rem;
+}
+.education-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.education-container .degree {
+    font-size: 1.5rem;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.education-container .date {
+    font-size: 1.125rem;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.education-container .school {
+    font-size: 1.125rem;
+    padding: 0.5rem 0 1.5rem 0;
+}
+
+.education-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background-color: #CCCCCC;
+    height: 10rem;
+    border-radius: 500px;
+    top: 100%;
+    z-index: 4;
+  }
+.education .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers children horizontally */
+}
+
+.education-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 768px;
+    gap: 11rem;
+    padding: 1rem;
+    align-items: center; /* Centers the education containers */
+    width: 100%; /* Takes full width of parent */
+}
+.education-container .degree {
+    opacity: 1;
+}
+.education-container .date,
+.education-container .school {
+    opacity: 0.7;
+    font-weight: normal;
+}
+.education-container i.fi {
+    opacity: 1;
+}
+
+.education-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all content inside */
+    width: 100%; /* Takes full width of parent */
+}
+/* Glowing and breathing animation for graduation cap icon */
+.education-container i.fi {
+    display: inline-block;
+    font-size: 1.5rem;
+    animation: iconBreathe 3s infinite ease-in-out;
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* Add the glow effect with box-shadow */
+  .education-container i.fi {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: iconGlow 3s infinite ease-in-out;
+  }
+  
+  /* Different colors for each education level */
+  .education-container:nth-child(1) i.fi {
+    text-shadow: 0 0 15px rgba(0, 183, 255, 0.8);
+  }
+  
+  .education-container:nth-child(2) i.fi {
+    text-shadow: 0 0 15px rgba(255, 183, 0, 0.8);
+  }
+  
+  .education-container:nth-child(3) i.fi {
+    text-shadow: 0 0 15px rgba(183, 0, 255, 0.8);
+  }
+  
+  /* Breathing animation */
+  @keyframes iconBreathe {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Glow animation */
+  @keyframes iconGlow {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .contact {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.contact-description {
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.contact-description p {
+    font-size: 1rem;
+    line-height: 1.625rem;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #CCCCCC;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+}
+
+.contact-btn:hover {
+    background: #FFFFFF;
+    color: #0A0A0A;
+}
+
+.contact-btn i {
+    font-size: 1.25rem;
+    padding-top: 0.30rem;
+}
+.contact .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contact section background styling */
+.contact {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden; /* To contain the absolute positioned elements */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.background-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.grid-lines {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-image: 
+        linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.04) 1px, transparent 1px);
+    background-size: 14px 24px;
+}
+
+.radial-glow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10%; /* Changed from top to bottom */
+    height: 1000px;
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: radial-gradient(circle 400px at 50% 700px, rgba(251, 251, 251, 0.21), transparent); /* Adjusted y-position from 300px to 700px */
+}
+
+/* Make sure the content is positioned above the background effect */
+.contact .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* You may need to adjust your existing contact section styling */
+.contact-description {
+    position: relative;
+    z-index: 1;
+}
+/* Gradient Background Effect */
+.gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(2, 6, 23); /* slate-950 equivalent */
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+  }
+  
+  .gradient-background.visible {
+    opacity: 1;
+  }
+  
+  .left-gradient {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    top: -10%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+  }
+  
+  .right-gradient {
+    position: absolute;
+    bottom: 0;
+    right: -20%;
+    top: -10%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+  }
+/* Add this to your existing CSS file */
+
+/* Gradient Background Effect */
+.gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(2, 6, 23); /* slate-950 equivalent */
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+.gradient-background.visible {
+    opacity: 1;
+}
+
+.left-gradient {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    top: -10%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+}
+
+.right-gradient {
+    position: absolute;
+    bottom: 0;
+    right: -20%;
+    top: -10%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+}
+
+/* Frosted Glass Effect for Buttons */
+.hero-btn, .drawer-btn, .send-btn, .btn, .contact-btn {
+    background: rgba(10, 10, 10, 0.5) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.hero-btn:hover, .drawer-btn:hover, .send-btn:hover, .btn:hover, .contact-btn:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+    color: #0A0A0A !important;
+}
+
+/* Frosted Glass Effect for Cards */
+.project-card, .drawer, .tech-item {
+    background: rgba(32, 32, 32, 0.4) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(31, 38, 135, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Navigation Links Frosted Glass Effect */
+.nav-links {
+    background: rgba(10, 10, 10, 0.5) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Input Fields Frosted Glass Effect */
+.input-field {
+    background: rgba(32, 32, 32, 0.4) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Overlay Frosted Glass Effect */
+.drawer-overlay {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Add glass effect to tag elements */
+.tag {
+    background: rgba(26, 26, 26, 0.4) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Add glass effect to hero icon button inner */
+.hero-btn i {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
